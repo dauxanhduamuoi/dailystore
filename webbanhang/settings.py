@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     #'app.CustomUser',
     'rest_framework',
     'corsheaders',
+     'rest_framework.authtoken',
+
 ]
 
 MIDDLEWARE = [
@@ -92,6 +94,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -137,3 +140,12 @@ MEDIA_URL = '/images/'
 
 #Test
 #AUTH_USER_MODEL = 'app.CustomUser'
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_HTTPONLY = False 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}

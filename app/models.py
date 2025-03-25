@@ -24,19 +24,25 @@ class CreateUserForm(UserCreationForm):
 
 #     def __str__(self):
 #         return self.username
-    
+
+
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL,null=True,blank=False)
-    name = models.CharField(max_length=200,null=True)
+    #name = models.CharField(max_length=200,null=True)
+    last_name = models.CharField(max_length=200,null=True)
+    first_name = models.CharField(max_length=200,null=True)
     email = models.CharField(max_length=200,null=True)
+    phone = models.CharField(max_length=15, null=True, blank=True)
 
     # def __str__(self):
     #     return self.name
     def __str__(self):
-     if self.name:
-            return str(self.name) # Convert to string in case it's not
+     if self.last_name and self.first_name:
+            return str(self.user.username+': ' + self.last_name +' ' + self.first_name) # Convert to string in case it's not
+     elif self.user:
+            return str(self.user.username)
      else:
-        return "Customer without name"  # Or some other default string
+        return "Customer without username"  # Or some other default string
 
 
 # Bảng Nhà cung cấp
