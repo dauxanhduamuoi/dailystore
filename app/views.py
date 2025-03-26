@@ -414,7 +414,7 @@ def order_detail(request, pk):
 def orderitem_list(request):
     if request.method == "GET":
         orderitem = OrderItem.objects.all()
-        serializer = OrderSerializer(orderitem, many=True)
+        serializer = OrderItemSerializer(orderitem, many=True)
         return Response(serializer.data)
     elif request.method == "POST":
         serializer = OrderItemSerializer(data=request.data)

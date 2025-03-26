@@ -95,7 +95,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UserSerializer_update(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'password','first_name', 'last_name', 'email', 'date_joined','phone']
+        fields = ['id', 'username', 'password','first_name', 'last_name', 'email', 'date_joined','phone','address']
     def update(self, instance, validated_data):
         password = validated_data.pop('password', None)  # Lấy mật khẩu (nếu có)
         # Cập nhật thông tin người dùng (như username, email, v.v.)
