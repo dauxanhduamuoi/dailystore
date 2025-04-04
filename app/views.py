@@ -13,6 +13,9 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from django.contrib.auth import update_session_auth_hash
 
 from rest_framework.views import APIView
+from django.contrib.auth import update_session_auth_hash
+
+from rest_framework.views import APIView
 # Create your views here.
 def search(request):
     if request.method =="POST":
@@ -49,6 +52,9 @@ def register(request):
 
             Customer.objects.create(
                 user=user,
+                # name=user.first_name + " " + user.last_name,  # Or however you want to set the name
+                first_name=user.first_name ,
+                last_name=user.last_name ,
                 # name=user.first_name + " " + user.last_name,  # Or however you want to set the name
                 first_name=user.first_name ,
                 last_name=user.last_name ,
@@ -921,6 +927,9 @@ def register_api(request):
             # Tạo customer
             Customer.objects.create(
                 user=user,
+                #name=user.first_name + " " + user.last_name,
+                first_name=user.first_name ,
+                last_name=user.last_name ,
                 #name=user.first_name + " " + user.last_name,
                 first_name=user.first_name ,
                 last_name=user.last_name ,

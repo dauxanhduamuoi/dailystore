@@ -45,9 +45,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
      'rest_framework.authtoken',
+<<<<<<< HEAD
     #  'rest_framework_simplejwt.token_blacklist',
      'rest_framework_simplejwt',
     
+=======
+>>>>>>> f21d8cf26cad6e0c0368a819335c0970eac12704
 
 ]
 
@@ -147,6 +150,7 @@ CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_HTTPONLY = False 
 
+<<<<<<< HEAD
 #Làm session
 # CORS_ALLOW_CREDENTIALS = True
 # CORS_ORIGIN_WHITELIST = [
@@ -168,5 +172,10 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',  # Đảm bảo người dùng phải đăng nhập
+=======
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+>>>>>>> f21d8cf26cad6e0c0368a819335c0970eac12704
     ],
 }

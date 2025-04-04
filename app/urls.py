@@ -6,6 +6,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     #Link cũ ko xài
+    #Link cũ ko xài
     path('',views.home, name="home"),
     path('cart/',views.cart, name="cart"),
     path('checkout/',views.checkout, name="checkout"),
