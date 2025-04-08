@@ -46,9 +46,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
      'rest_framework.authtoken',
+<<<<<<< HEAD
     #  'rest_framework_simplejwt.token_blacklist',
      'rest_framework_simplejwt',
     
+=======
+<<<<<<< HEAD
+    #  'rest_framework_simplejwt.token_blacklist',
+     'rest_framework_simplejwt',
+    
+=======
+>>>>>>> f21d8cf26cad6e0c0368a819335c0970eac12704
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
 
 ]
 
@@ -154,6 +163,10 @@ CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_HTTPONLY = False 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
 #Làm session
 # CORS_ALLOW_CREDENTIALS = True
 # CORS_ORIGIN_WHITELIST = [
@@ -174,6 +187,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',  # Hoặc 'rest_framework.authentication.TokenAuthentication' nếu bạn dùng DRF token
     ],
     'DEFAULT_PERMISSION_CLASSES': [
+<<<<<<< HEAD
         #'rest_framework.permissions.IsAuthenticated',  # Đảm bảo người dùng phải đăng nhập
         #'rest_framework.permissions.AllowAny',
     ],
@@ -186,4 +200,13 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
     'UPDATE_LAST_LOGIN': False,
+=======
+        'rest_framework.permissions.IsAuthenticated',  # Đảm bảo người dùng phải đăng nhập
+=======
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+>>>>>>> f21d8cf26cad6e0c0368a819335c0970eac12704
+    ],
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
 }
