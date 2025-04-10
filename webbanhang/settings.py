@@ -46,9 +46,24 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
      'rest_framework.authtoken',
+<<<<<<< HEAD
     #  'rest_framework_simplejwt.token_blacklist',
      'rest_framework_simplejwt',
     
+=======
+<<<<<<< HEAD
+    #  'rest_framework_simplejwt.token_blacklist',
+     'rest_framework_simplejwt',
+    
+=======
+<<<<<<< HEAD
+    #  'rest_framework_simplejwt.token_blacklist',
+     'rest_framework_simplejwt',
+    
+=======
+>>>>>>> f21d8cf26cad6e0c0368a819335c0970eac12704
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 
 ]
 
@@ -154,6 +169,13 @@ CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_HTTPONLY = False 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 #Làm session
 # CORS_ALLOW_CREDENTIALS = True
 # CORS_ORIGIN_WHITELIST = [
@@ -174,6 +196,10 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',  # Hoặc 'rest_framework.authentication.TokenAuthentication' nếu bạn dùng DRF token
     ],
     'DEFAULT_PERMISSION_CLASSES': [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
         #'rest_framework.permissions.IsAuthenticated',  # Đảm bảo người dùng phải đăng nhập
         #'rest_framework.permissions.AllowAny',
     ],
@@ -181,9 +207,25 @@ REST_FRAMEWORK = {
 }
 # Cấu hình JWT (nếu cần)
 SIMPLE_JWT = {
+<<<<<<< HEAD
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Thời gian sống của access token
+=======
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),  # Thời gian sống của access token
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  # Thời gian sống của refresh token
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
     'UPDATE_LAST_LOGIN': False,
+<<<<<<< HEAD
+=======
+=======
+        'rest_framework.permissions.IsAuthenticated',  # Đảm bảo người dùng phải đăng nhập
+=======
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+>>>>>>> f21d8cf26cad6e0c0368a819335c0970eac12704
+    ],
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 }

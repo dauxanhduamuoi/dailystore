@@ -13,6 +13,15 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from django.contrib.auth import update_session_auth_hash
 
 from rest_framework.views import APIView
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+from django.contrib.auth import update_session_auth_hash
+
+from rest_framework.views import APIView
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 # Create your views here.
 def search(request):
     if request.method =="POST":
@@ -52,6 +61,15 @@ def register(request):
                 # name=user.first_name + " " + user.last_name,  # Or however you want to set the name
                 first_name=user.first_name ,
                 last_name=user.last_name ,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                # name=user.first_name + " " + user.last_name,  # Or however you want to set the name
+                first_name=user.first_name ,
+                last_name=user.last_name ,
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
                 email=user.email
             )
         user_login = 'hidden'
@@ -184,11 +202,23 @@ def product_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
     
     #API dùng query parameter-----------------------------------------
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes
 
 @api_view(['GET','POST', 'PUT','PATCH', 'DELETE'])
 @permission_classes([AllowAny]) 
+<<<<<<< HEAD
+=======
+=======
+
+
+@api_view(['GET','POST', 'PUT','PATCH', 'DELETE'])
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 def product2_list(request):
     product_id = request.GET.get('id')  # Lấy id từ query parameters
     show_quantity = request.GET.get('show_quantity', False)  # Kiểm tra có yêu cầu hiển thị quantity hay không
@@ -243,10 +273,19 @@ def product2_list(request):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Product.DoesNotExist:
             return Response({"detail": "Product not found."}, status=status.HTTP_404_NOT_FOUND)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
      # Các phương thức PUT, PATCH, DELETE tương tự cần IsAuthenticated
     elif request.method in ['PUT', 'PATCH', 'DELETE']:
         permission_classes([IsAuthenticated])  # Chỉ cho phép người dùng đã xác thực thực hiện các hành động này
         # Xử lý các hành động PUT, PATCH, DELETE...
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 
 #------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------
@@ -930,6 +969,15 @@ def register_api(request):
                 #name=user.first_name + " " + user.last_name,
                 first_name=user.first_name ,
                 last_name=user.last_name ,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                #name=user.first_name + " " + user.last_name,
+                first_name=user.first_name ,
+                last_name=user.last_name ,
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
                 email=user.email
             )
             
@@ -1381,6 +1429,10 @@ class LoginView(APIView):
             return Response({'detail': 'Login successful.'}, status=status.HTTP_200_OK)
         else:
             return Response({'detail': 'Invalid credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
         
 #------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------
@@ -1591,4 +1643,9 @@ def product_search(request):
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
     return Response([])
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3db01b4c4d74bec719c1b9a19af89a763a215890
+>>>>>>> a0e0ef2062a881252e2e6da1e468f0b72c9813a6
 
