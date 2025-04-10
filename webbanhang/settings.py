@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from datetime import timedelta
 import os
 from pathlib import Path
 
@@ -44,6 +45,11 @@ INSTALLED_APPS = [
     #'app.CustomUser',
     'rest_framework',
     'corsheaders',
+     'rest_framework.authtoken',
+    #  'rest_framework_simplejwt.token_blacklist',
+     'rest_framework_simplejwt',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -55,6 +61,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+
+    # 'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+        # Middleware của SimpleJWT
+    #'rest_framework_simplejwt.middleware.JWTAuthenticationMiddleware',
+
 ]
 
 ROOT_URLCONF = 'webbanhang.urls'
@@ -91,6 +103,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -137,3 +150,40 @@ MEDIA_URL = '/images/'
 
 #Test
 #AUTH_USER_MODEL = 'app.CustomUser'
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_HTTPONLY = False 
+
+#Làm session
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:8080',  # Thêm domain của frontend vào đây
+# ]
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.TokenAuthentication',
+    # ],
+    #     'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.SessionAuthentication',  # Sử dụng Session Authentication
+    # ],
+    #     'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',  # Thêm JWTAuthentication
+    # ],
+        'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',  # Hoặc 'rest_framework.authentication.TokenAuthentication' nếu bạn dùng DRF token
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        #'rest_framework.permissions.IsAuthenticated',  # Đảm bảo người dùng phải đăng nhập
+        #'rest_framework.permissions.AllowAny',
+    ],
+    
+}
+# Cấu hình JWT (nếu cần)
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Thời gian sống của access token
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  # Thời gian sống của refresh token
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'UPDATE_LAST_LOGIN': False,
+}
